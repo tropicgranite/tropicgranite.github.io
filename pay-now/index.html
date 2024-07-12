@@ -263,34 +263,42 @@ var pysOptions = {"staticEvents":{"facebook":{"init_event":[{"delay":0,"type":"s
 <link rel="icon" href="../wp-content/uploads/2019/03/cropped-PRI-Mark-Gold-Texture-192x192.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="../wp-content/uploads/2019/03/cropped-PRI-Mark-Gold-Texture-180x180.png" />
 <meta name="msapplication-TileImage" content="https://priano.com/wp-content/uploads/2019/03/cropped-PRI-Mark-Gold-Texture-270x270.png" />
-		<style id="wp-custom-css">
-			.get-direction h4.elementor-heading-title {
-    width: 100vw;
-}
-input#gform_submit_button_19 {
-    max-width: 50% !important;
-    width: 100% !important;
-    text-align: center !important;
-}
-@media (max-width:768px) {
-	.featured-section {
-    background-position: center center !important;
-    background-size: cover !important;
-    background-repeat: no-repeat;
-    max-height: 450px;
-}
-	.footer-widgets h4.elementor-heading-title {
-    font-size: 14px !important;
-}
-	.elementor-element.contact-call, .elementor-element.contact-email {
-    margin-bottom: 0;
-}
-input#gform_submit_button_19 {
-    max-width: 100% !important;
-    width: 100% !important;
-    text-align: center !important;
-}	
-}
+<style id="wp-custom-css">
+    .get-direction h4.elementor-heading-title {
+        width: 100vw;
+    }
+    input#gform_submit_button_19 {
+        max-width: 50% !important;
+        width: 100% !important;
+        text-align: center !important;
+        background-color: #dddddd; /* Gray background color */
+        color: #888888; /* Gray text color */
+        cursor: not-allowed; /* Change cursor to indicate it's disabled */
+        pointer-events: none; /* Disable pointer events */
+    }
+    input#gform_submit_button_19:disabled {
+        opacity: 0.5; /* Optional: Reduce opacity to visually indicate disabled state */
+    }
+    @media (max-width: 768px) {
+        .featured-section {
+            background-position: center center !important;
+            background-size: cover !important;
+            background-repeat: no-repeat;
+            max-height: 450px;
+        }
+        .footer-widgets h4.elementor-heading-title {
+            font-size: 14px !important;
+        }
+        .elementor-element.contact-call,
+        .elementor-element.contact-email {
+            margin-bottom: 0;
+        }
+        input#gform_submit_button_19 {
+            max-width: 100% !important;
+            width: 100% !important;
+            text-align: center !important;
+        }
+    }
 .eael-gravity-form .gform_wrapper ul.gform_fields li.gfield {
     padding: 0px;
     padding-right: 16px !important;
