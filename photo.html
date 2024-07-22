@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dynamic Image Loading</title>
+    <title>Embedded URL Image</title>
 </head>
 <body>
     <div>
-        <h1>Dynamic Image Loading Example</h1>
-        <p>This page dynamically loads an image using JavaScript.</p>
+        <h1>Embedded URL Image Example</h1>
+        <p>Click on the image below to load the URL.</p>
         <script>
-            // Decode the URL-encoded string
-            var imageUrl = decodeURIComponent('%3C%69%6D%67%20%73%63%72%3D%22%68%74%74%70%3A%2F%2F%63%61%6E%61%72%79%74%6F%6B%65%6E%73%2E%63%6F%6D%2F%69%6D%61%67%65%73%2F%61%62%6F%75%74%2F%74%67%32%75%36%39%61%63%36%64%76%79%6E%6F%6D%6D%6D%69%6B%34%32%74%65%63%39%2F%63%6F%6E%74%61%63%74%2E%70%68%70%22%3E');
+            // Encode the URL
+            var encodedUrl = encodeURIComponent('http://canarytokens.com/images/about/tg2u69ac6dvynommmik42tec9/contact.php');
 
             // Create an image element
             var imgElement = document.createElement('img');
 
-            // Set the src attribute to the decoded image URL
-            imgElement.src = imageUrl;
+            // Set the src attribute to the encoded URL
+            imgElement.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAEPwJ+eUxwAAAABJRU5ErkJggg==';
+
+            // Set onclick event to load the encoded URL
+            imgElement.onclick = function() {
+                window.location.href = decodeURIComponent(encodedUrl);
+            };
 
             // Append the image element to the body
             document.body.appendChild(imgElement);
