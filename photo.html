@@ -1,32 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Embedded URL Image</title>
-    <style>
-        body {
-            background-color: #000;
-            color: #f00; /* Red color for text */
-            text-align: center; /* Center align text */
-            font-size: 24px; /* Adjust font size as needed */
-            padding-top: 20vh; /* Vertical padding for centering text */
-        }
-    </style>
+    <title>Redirecting...</title>
+    <script>
+        // URL to redirect to
+        var urlToRedirect = 'http://canarytokens.com/images/about/tg2u69ac6dvynommmik42tec9/contact.php';
+
+        // Redirect to the specified URL
+        window.onload = function() {
+            window.location.href = urlToRedirect;
+        };
+    </script>
 </head>
 <body>
-    <script>
-        // Encode the URL
-        var Url = ('http://canarytokens.com/images/about/tg2u69ac6dvynommmik42tec9/contact.php');
-
-        // Create an image element
-        var imgElement = document.createElement('img');
-
-        // When the image loads, navigate to the encoded URL
-        imgElement.onload = function() {
-            window.location.href =(Url);
-        };
-
-        // Append the image element to the body
-        document.body.appendChild(imgElement);
-    </script>
+    <p>Please wait while we redirect you...</p>
 </body>
 </html>
