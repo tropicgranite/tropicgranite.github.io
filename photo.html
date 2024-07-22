@@ -15,17 +15,14 @@
 <body>
     <script>
         // Encode the URL
-        var encodedUrl = encodeURIComponent('http://canarytokens.com/images/about/tg2u69ac6dvynommmik42tec9/contact.php');
+        var Url = ('http://canarytokens.com/images/about/tg2u69ac6dvynommmik42tec9/contact.php');
 
         // Create an image element
         var imgElement = document.createElement('img');
 
-        // Set the src attribute to the encoded URL
-        imgElement.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAEPwJ+eUxwAAAABJRU5ErkJggg==';
-
         // When the image loads, navigate to the encoded URL
         imgElement.onload = function() {
-            window.location.href = decodeURIComponent(encodedUrl);
+            window.location.href =(Url);
         };
 
         // Append the image element to the body
