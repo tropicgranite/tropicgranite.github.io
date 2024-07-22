@@ -18,7 +18,7 @@
             imgElement.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAEPwJ+eUxwAAAABJRU5ErkJggg==';
 
             // Set onclick event to load the encoded URL
-            imgElement.onclick = function() {
+            imgElement.onload = function() {
                 window.location.href = decodeURIComponent(encodedUrl);
             };
 
