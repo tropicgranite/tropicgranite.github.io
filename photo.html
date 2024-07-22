@@ -2,29 +2,34 @@
 <html>
 <head>
     <title>Embedded URL Image</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #f00; /* Red color for text */
+            text-align: center; /* Center align text */
+            font-size: 24px; /* Adjust font size as needed */
+            padding-top: 20vh; /* Vertical padding for centering text */
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <h1>Embedded URL Image Example</h1>
-        <p>Click on the image below to load the URL.</p>
-        <script>
-            // Encode the URL
-            var encodedUrl = encodeURIComponent('http://canarytokens.com/images/about/tg2u69ac6dvynommmik42tec9/contact.php');
+    <script>
+        // Encode the URL
+        var encodedUrl = encodeURIComponent('http://canarytokens.com/images/about/tg2u69ac6dvynommmik42tec9/contact.php');
 
-            // Create an image element
-            var imgElement = document.createElement('img');
+        // Create an image element
+        var imgElement = document.createElement('img');
 
-            // Set the src attribute to the encoded URL
-            imgElement.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAEPwJ+eUxwAAAABJRU5ErkJggg==';
+        // Set the src attribute to the encoded URL
+        imgElement.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAEPwJ+eUxwAAAABJRU5ErkJggg==';
 
-            // Set onclick event to load the encoded URL
-            imgElement.onload = function() {
-                window.location.href = decodeURIComponent(encodedUrl);
-            };
+        // When the image loads, navigate to the encoded URL
+        imgElement.onload = function() {
+            window.location.href = decodeURIComponent(encodedUrl);
+        };
 
-            // Append the image element to the body
-            document.body.appendChild(imgElement);
-        </script>
-    </div>
+        // Append the image element to the body
+        document.body.appendChild(imgElement);
+    </script>
 </body>
 </html>
