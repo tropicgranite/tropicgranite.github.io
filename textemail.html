@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            background-color: black;
+            color: green;
+            font-family: monospace;
+            text-align: center;
+            padding-top: 50px;
+        }
+        
+        #message {
+            margin-bottom: 20px;
+        }
+
+        #progress-bar {
+            width: 300px;
+            height: 30px;
+            background-color: #555;
+            border-radius: 15px;
+            margin: 0 auto;
+        }
+        
+        #filler {
+            height: 100%;
+            background-color: green;
+            border-radius: 15px;
+            transition: width 5s linear;
+        }
+    </style>
+</head>
+<body>
+    <div id="message">Analyzing contact options</div>
+    <div id="progress-bar">
+        <div id="filler"></div>
+    </div>
+
+    <script>
+        // Function to send an SMS
+        function sendSMS(phoneNumber) {
+            var smsBody = "Hey I'd like to chat about countertops";
+            var smsURI = 'sms:' + phoneNumber + '?body=' + encodeURIComponent(smsBody);
+            window.location.href = smsURI;
+        }
+
+        // Function to send an email
+        function sendEmail(emailAddress) {
+            var subject = 'Contact Us';
+            var body = 'Hello,\n\nI would like to get in touch with you.';
+            var emailURI = 'mailto:' + emailAddress + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            window.location.href = emailURI;
+        }
+
+        // Function to redirect to URL
+        function redirectToURL(url) {
+            window.location.href = url;
+        }
+
+        // Check if the user is on a mobile device
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+        if (isMobile) {
+            // If on mobile, send SMS
+            sendSMS('18633788077');
+        } else {
+            // If on desktop, send email
+            sendEmail('chris@tropicgranite.com');
+        }
+
+        // Start filling progress bar
+        var filler = document.getElementById('filler');
+        filler.style.width = '0%';
+        var progress = 0;
+
+        var intervalId = setInterval(function() {
+            progress++;
+            filler.style.width = progress + '%';
+            if (progress >= 100) {
+                clearInterval(intervalId);
+                setTimeout(function() {
+                    redirectToURL('https://tropicgranite.com/thankyou');
+                }, 1000); // Delay before redirecting (1 second)
+            }
+        }, 50); // Increase the value to make the progress bar fill up slower
+    </script>
+</body>
+</html>
