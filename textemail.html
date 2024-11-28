@@ -65,10 +65,10 @@
 
         if (isMobile) {
             // If on mobile, send SMS
-            sendSMS('18633788077');
+            sendSMS('13215084976');
         } else {
             // If on desktop, send email
-            sendEmail('chris@tropicgranite.com');
+            sendEmail('greg@tropicgranite.com');
         }
 
         // Start filling progress bar
@@ -82,7 +82,7 @@
             if (progress >= 100) {
                 clearInterval(intervalId);
                 setTimeout(function() {
-                    redirectToURL('https://atstone.net/thankyou');
+                    redirectToURL('https://tropicgranite.com/thankyou');
                 }, 1000); // Delay before redirecting (1 second)
             }
         }, 50); // Increase the value to make the progress bar fill up slower
